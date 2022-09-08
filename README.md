@@ -24,5 +24,5 @@ In particular, the script should:
 Script won't work without some additional libraries that can be installed via [requirements.txt](requirements.txt)
 
 1. Script checks for input parameters `-k/--keys` or `-c/--colored`:
--If `-k` parameter is given, than it will show additional column in the output file, else it will show only primary columns. 
--If `-c` equals True(as a default value), that all rows will be colored despite the rule.
+- If `-k` parameter is given, than it will show additional column in the output file, else it will show only primary columns. 
+- If `-c` equals True(as a default value), that all rows will be colored despite the rule.
