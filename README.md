@@ -16,6 +16,6 @@ Script won't work without some additional libraries that can be installed via [r
  - However, if `labelIds` was not given as an input parameter, it won't show column `labelIds`
 5. Using function `sort_excel()` all the data will be converted to xlsx file and will be sorted by field `gruppe`
 6. If `-c` equals `True`, than function `color_rows()` will be active and compare the value in the filed `hu` to the folowing logic:
-- If `hu` is not older than 3 months --> green (`#007500`)
-- If `hu` is not older than 12 months --> orange (`#FFA500`)
-- If `hu` is older than 12 months --> red (`#b30000`)
+   - If `hu` is not older than 3 months --> green (`#007500`)
+   - If `hu` is not older than 12 months --> orange (`#FFA500`)
+   - If `hu` is older than 12 months --> red (`#b30000`)
