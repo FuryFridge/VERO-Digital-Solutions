@@ -13,3 +13,5 @@ Script won't work without some additional libraries that can be installed via [r
    - If `hu` is not older than 3 months --> green (`#007500`)
    - If `hu` is not older than 12 months --> orange (`#FFA500`)
    - If `hu` is older than 12 months --> red (`#b30000`)
+
+As an output, [vehicles_2022-09-08_iso_formatted.xlsx](vehicles_2022-09-08_iso_formatted.xlsx) is given.
