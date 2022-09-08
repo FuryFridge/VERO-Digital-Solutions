@@ -3,11 +3,8 @@
 Write a python script that connects to a remote API, downloads a certain set of resources, merges them with local resources, and converts them to a formatted excel file.
 In particular, the script should:
 
-- Take an input parameter `-k/--keys` that can receive an arbitrary amount of string arguments
-- Take an input parameter `-c/--colored` that receives a boolean flag and defaults to `True`
 - Request the resources located at `https://api.baubuddy.de/dev/index.php/v1/vehicles/select/active`
-- Additionally, read and parse the locally provided [vehicles.csv](vehicles.csv)
-- Store both of them in an appropriate data structure and make sure the result is distinct
+
 - Filter out any resources that do not have a value set for `hu` field
 - For each `labelId` in the vehicle's JSON array `labelIds` resolve its `colorCode` using `https://api.baubuddy.de/dev/index.php/v1/labels/{labelId}`
 - Generate an `.xlsx` file that contains all resources and make sure that:
@@ -23,6 +20,8 @@ In particular, the script should:
 
 Script won't work without some additional libraries that can be installed via [requirements.txt](requirements.txt)
 
-1. Script checks for input parameters `-k/--keys` or `-c/--colored`:
+1. Function `parse_args(args)` in the script checks the input parameters `-k/--keys` or `-c/--colored`:
 - If `-k` parameter is given, than it will show additional column in the output file, else it will show only primary columns. 
-- If `-c` equals True(as a default value), that all rows will be colored despite the rule.
+- If `-c` equals True(as a default value), that all rows will be colored despite the rule its given.
+2. Using function `login()` it connects to the remote API to take `access_token` and then function `request_resourse(acc_tkn)` takes the resources located at `https://api.baubuddy.de/dev/index.php/v1/vehicles/select/active`
+3. 
