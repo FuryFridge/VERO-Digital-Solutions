@@ -1,14 +1,3 @@
-Hello dear python dev!
-
-This repository is supposed to act as a playground for your submission.
-
-Before getting started, please make sure use this repository as a **template** and create your own **public** repository, on which you will commit and push your code regularly. 
-Once you are ready, please mail us back the link to your repository. 
-
-Below, you will find the **Task** definition.
-
-Happy Hacking :computer:
-
 # Task
 
 Write a python script that connects to a remote API, downloads a certain set of resources, merges them with local resources, and converts them to a formatted excel file.
@@ -32,38 +21,8 @@ In particular, the script should:
      - If `hu` is older than 12 months --> red (`#b30000`)
    - The file should be named `vehicles_{current_date_iso_formatted}.xlsx`
 
-### Authorization
+Script won't work without some additional libraries that can be installed via [requirements.txt](requirements.txt)
 
-It's mandatory for your requests towers the API to be authorized. You can find the required request below:
-
-This is how it looks in `curl`:
-
-```bash
-curl --request POST \
-  --url https://api.baubuddy.de/index.php/login \
-  --header 'Authorization: Basic QVBJX0V4cGxvcmVyOjEyMzQ1NmlzQUxhbWVQYXNz' \
-  --header 'Content-Type: application/json' \
-  --data '{
-        "username":"365",
-        "password":"1"
-}'
-```
-
-The response will contain a json object, having the access token in `json["oauth"]["access_token"]`. For all subsequent calls this has to be added to the request headers as `Authorization: Bearer {access_token}`.
-
-A possible implementation in `Python` could be the following. You don't have to copy over this one, feel free to indivualize it or use a different network library.
-
-```python
-import requests
-url = "https://api.baubuddy.de/index.php/login"
-payload = {
-    "username": "365",
-    "password": "1"
-}
-headers = {
-    "Authorization": "Basic QVBJX0V4cGxvcmVyOjEyMzQ1NmlzQUxhbWVQYXNz",
-    "Content-Type": "application/json"
-}
-response = requests.request("POST", url, json=payload, headers=headers)
-print(response.text)
-```
+1. Firstly, script is checking for input parameters `-k/--keys` or `-c/--colored`:
+-If `-k` parameter is given, than it will show additional column in the output file, else it will show only primary columns. 
+-If `-c` equals True(as a default value), that all rows will be colored despite the rule.
